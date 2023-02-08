@@ -22,9 +22,13 @@ jobs:
       - run: npm ci
       - name: Login to Postman CLI
         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
-      - name: Run API tests
-        run: |
-          postman collection run "21956495-4ba35fa3-9dbc-4dcf-a3d0-bcc23076271b" -e "21956495-ab76680b-50c6-4a3d-88ee-6049fa95d27e"
+      - name: Run API Tests
+        id: run-newman
+        uses: anthonyvscode/newman-action@v1
+        with:
+          apiKey: ${{ secrets.POSTMAN_API_KEY }}
+          collection: 21956495-4ba35fa3-9dbc-4dcf-a3d0-bcc23076271b
+          environment: 21956495-ab76680b-50c6-4a3d-88ee-6049fa95d27e
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v2
         if: always() # always run even if the previous step fails
