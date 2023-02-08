@@ -20,7 +20,7 @@ jobs:
         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
       - name: Run API tests
         run: |
-          newman run "src/ReqRes.postman_collection.json" -e "src/qa.postman_environment.json" -r htmlextra --reporter-htmlextra-export test_results/test_report.html
+          newman run ".src/ReqRes.postman_collection.json" -e ".src/qa.postman_environment.json" -r htmlextra --reporter-htmlextra-export test_results/test_report.html
       - name: Output the run details
         uses: actions/upload-artifact@v3
         with:
