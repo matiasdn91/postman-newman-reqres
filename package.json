@@ -1,0 +1,16 @@
+{
+  "name": "postman-reqres",
+  "version": "1.0.0",
+  "description": "Collection de pruebas API Postman en el sitio https://reqres.in/ ejecutada con Github Actions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "qa",
+    "automation",
+    "postman"
+  ],
+  "author": "Matias Damian Nazadek",
+  "license": "ISC"
+}
