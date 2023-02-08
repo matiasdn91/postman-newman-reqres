@@ -20,8 +20,6 @@ jobs:
         run: npm install
       - run: npm install -g newman
       - run: npm ci
-      - name: Login to Postman CLI
-        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
       - name: Run API Tests
         id: run-newman
         uses: anthonyvscode/newman-action@v1
