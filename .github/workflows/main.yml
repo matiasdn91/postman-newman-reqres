@@ -26,7 +26,7 @@ jobs:
  
       - name: Run Postman Collection        
         run: | 
-         newman run ReqRes.postman_collection.json -e qa.postman_environment.json --suppress-exit-code -r htmlextra --reporter-htmlextra-export testArtifacts/htmlreport.html 
+         newman run source/ReqRes.postman_collection.json -e source/qa.postman_environment.json --suppress-exit-code -r htmlextra --reporter-htmlextra-export testArtifacts/htmlreport.html 
 
       - name: Output the results
         uses: actions/upload-artifact@v3
