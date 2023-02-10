@@ -26,7 +26,7 @@ jobs:
  
       - name: Run Postman Collection        
         run: | 
-         newman  run https://api.getpostman.com/collections/21956495-4ba35fa3-9dbc-4dcf-a3d0-bcc23076271b?apikey={{secrets.POSTMAN_API_KEY}} -e https://api.getpostman.com/environments/21956495-ab76680b-50c6-4a3d-88ee-6049fa95d27e?apikey={{secrets.POSTMAN_API_KEY}} --suppress-exit-code -r htmlextra --reporter-htmlextra-export testArtifacts/htmlreport.html 
+         newman  run 21956495-4ba35fa3-9dbc-4dcf-a3d0-bcc23076271b -e 21956495-ab76680b-50c6-4a3d-88ee-6049fa95d27e --suppress-exit-code -r htmlextra --reporter-htmlextra-export testArtifacts/htmlreport.html 
 
       - name: Output the results
         uses: actions/upload-artifact@v3
