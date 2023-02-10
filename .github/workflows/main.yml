@@ -2,10 +2,6 @@ name: Automated API tests using Postman CLI
 
 on: push
 
-defaults:
-  run:
-    working-directory: postman-reqres
-
 jobs:
   automated-api-tests:
     runs-on: windows-latest
