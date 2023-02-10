@@ -10,19 +10,15 @@ jobs:
       - name: Install newman
         run: |
          npm install -g newman   
-      - name: Install Postman CLI
+         npm install -g newman-reporter-htmlextra
+      - name: Make Directory for results
+        run: mkdir -p testResults
+      - name: Run POSTMAN collection
         run: |
-          powershell.exe -NoProfile -InputFormat None -ExecutionPolicy AllSigned -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://dl-cli.pstmn.io/install/win64.ps1'))"
-      - name: Login to Postman CLI
-        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
-      - name: Make Directory for Test Results
-        run: mkdir -p testArtifacts   
-      - name: Run API tests
-        run: |
-          postman collection run "21956495-4ba35fa3-9dbc-4dcf-a3d0-bcc23076271b" -e "21956495-ab76680b-50c6-4a3d-88ee-6049fa95d27e"
-      - name: Output the results
+          newman run ReqRes.postman_collection.json -e qa.postman_environment.json -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport1.html
+      - name: Output the run Details
         uses: actions/upload-artifact@v2
         with:
-         name: Reports
-         path: testArtifacts
+          name: RunReports
+          path: testResults
 
