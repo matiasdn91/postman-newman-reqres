@@ -1,7 +1,7 @@
 {
   "name": "postman-reqres",
   "version": "1.0.0",
-  "description": "Collection de pruebas API Postman en el sitio https://reqres.in/ ejecutada con Github Actions",
+  "description": "Ejecución de Postman Collection del sitio https://reqres.in/ en Github Actions con Newman y generación de reporte HTML",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
