@@ -15,7 +15,7 @@ jobs:
         run: mkdir -p testResults
       - name: Run POSTMAN collection
         run: |
-          newman run ReqRes.postman_collection.json -e qa.postman_environment.json -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport1.html
+          newman run ReqRes.postman_collection.json -e qa.postman_environment.json
       - name: Output the run Details
         uses: actions/upload-artifact@v2
         with:
