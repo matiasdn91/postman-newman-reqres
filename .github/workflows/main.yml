@@ -10,6 +10,8 @@ jobs:
       - name: Install newman
         run: |
          npm install -g newman
+      - name: Make Directory for Test Results
+        run: mkdir -p testArtifacts      
       - name: Install Postman CLI
         run: |
           powershell.exe -NoProfile -InputFormat None -ExecutionPolicy AllSigned -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://dl-cli.pstmn.io/install/win64.ps1'))"
@@ -18,9 +20,9 @@ jobs:
       - name: Run API tests
         run: |
           postman collection run "21956495-4ba35fa3-9dbc-4dcf-a3d0-bcc23076271b" -e "21956495-ab76680b-50c6-4a3d-88ee-6049fa95d27e"
-      - name: Output the run Details
-        uses: actions/upload-artifact@v3
+      - name: Output the results
+        uses: actions/upload-artifact@v2
         with:
-          name: testReport
-          path: postman-reqres/testReport
+         name: Reports
+         path: testArtifacts
 
