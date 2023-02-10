@@ -9,14 +9,14 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install newman
         run: |
-         npm install -g newman
-      - name: Make Directory for Test Results
-        run: mkdir -p testArtifacts      
+         npm install -g newman   
       - name: Install Postman CLI
         run: |
           powershell.exe -NoProfile -InputFormat None -ExecutionPolicy AllSigned -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://dl-cli.pstmn.io/install/win64.ps1'))"
       - name: Login to Postman CLI
         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
+      - name: Make Directory for Test Results
+        run: mkdir -p testArtifacts   
       - name: Run API tests
         run: |
           postman collection run "21956495-4ba35fa3-9dbc-4dcf-a3d0-bcc23076271b" -e "21956495-ab76680b-50c6-4a3d-88ee-6049fa95d27e"
