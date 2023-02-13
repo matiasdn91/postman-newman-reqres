@@ -4,7 +4,7 @@
 
 <a href="https://www.postman.com/"><img src="https://miro.medium.com/max/1400/1*B8wqVr1Yd5COhcTXdKIv-Q.png" /></a><br />
 
-## [Postman](https://www.postman.com/) Collection ejecutada via [Github Actions](https://docs.github.com/es/actions) con [Newman](https://www.npmjs.com/package/newman)
+## [Postman](https://www.postman.com/) Collection ejecutada con [Newman](https://www.npmjs.com/package/newman) via [Github Actions](https://docs.github.com/es/actions) 
 
 ### Sobre el proyecto
 
