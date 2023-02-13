@@ -24,7 +24,7 @@ git clone https://github.com/matiasdn91/postman-reqres.git
 - Tener instalado [Newman](https://www.npmjs.com/package/newman) de manera global.
 
 #### Algunas consideraciones
-Para ejecutar tus propias pruebas es necesario exportar las Collections y Environments de tu Workspace en Postman como archivos .json, importar ambos a la carpeta Source del directorio y modificar el código del archivo Main.yml reemplazando los datos:
+Para ejecutar tus propias pruebas es necesario exportar las Collections y Environments de tu Workspace en Postman como archivos .json, importar ambos a la carpeta Source del directorio y modificar el código del archivo main.yml reemplazando los datos:
 
 ```
 - name: Run Postman Collection        
