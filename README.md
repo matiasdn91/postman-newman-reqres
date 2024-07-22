@@ -33,4 +33,4 @@ Para ejecutar tus propias pruebas es necesario exportar las Collections y Enviro
 
 ```
 #### Conclusión
-Una vez que usemos el evento Push, las pruebas se ejecutarán de forma automática en la pestaña Actions y al finalizar se podrá descargar el dashboard del Test Report en formato HTML interactivo como Artifact.
+Una vez que usemos el evento Push, las pruebas se ejecutarán de forma automática en la pestaña Actions y al finalizar se podrá descargar el dashboard del Test Report en formato HTML interactivo como Artifact. Prueba.
