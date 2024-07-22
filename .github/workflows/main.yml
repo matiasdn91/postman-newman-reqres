@@ -29,7 +29,7 @@ jobs:
          newman run source/ReqRes.postman_collection.json -e source/qa.postman_environment.json --suppress-exit-code -r htmlextra --reporter-htmlextra-export testArtifacts/htmlreport.html 
 
       - name: Output the results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
          name: Reports
          path: testArtifacts
